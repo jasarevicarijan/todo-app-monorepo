@@ -1,0 +1,13 @@
+{
+  "name": "todo-app-monorepo",
+  "version": "1.0.0",
+  "description": "Monorepo repository for Todo app using React, Tailwind CSS, TypeScript and Vite.",
+  "main": "index.js",
+  "author": "Arijan Jašarević",
+  "license": "MIT",
+  "workspaces": [
+    "shared/*",
+    "apps/*"
+  ],
+  "packageManager": "yarn@4.0.2"
+}
