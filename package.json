@@ -13,5 +13,8 @@
     "todo-app": "yarn workspace @apps/todo-app dev",
     "todo-app:build": "yarn workspace @apps/todo-app build"
   },
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.0.2",
+  "dependencies": {
+    "eslint": "^8.56.0"
+  }
 }

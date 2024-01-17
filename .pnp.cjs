@@ -31,6 +31,7 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
+          ["eslint", "npm:8.56.0"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -3989,7 +3990,8 @@ const RAW_RUNTIME_STATE =
       ["workspace:.", {\
         "packageLocation": "./",\
         "packageDependencies": [\
-          ["todo-app-monorepo", "workspace:."]\
+          ["todo-app-monorepo", "workspace:."],\
+          ["eslint", "npm:8.56.0"]\
         ],\
         "linkType": "SOFT"\
       }]\
