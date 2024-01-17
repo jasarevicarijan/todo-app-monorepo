@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import TextareaWithValidation from "../../../../shared/src/components/TextareaWithValidation";
+import TextareaWithValidation from "../../../../shared/ui/src/components/TextareaWithValidation";
 import useTodo from "../hooks/useTodo";
 import { TodoStatus } from "../enums/status";
 

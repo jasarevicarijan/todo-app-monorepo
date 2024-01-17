@@ -1,4 +1,4 @@
-import TextareaWithValidation from "../../../../shared/src/components/TextareaWithValidation";
+import TextareaWithValidation from "../../../../shared/ui/src/components/TextareaWithValidation";
 import useTodo from "../hooks/useTodo";
 
 const TodoCreate = (): JSX.Element => {
@@ -9,8 +9,11 @@ const TodoCreate = (): JSX.Element => {
     handleDescriptionBlur,
     handleSaveChanges,
     handleKeyDown,
-    handleCancel,
   } = useTodo();
+
+  const handleCancel = () => {
+    window.history.back();
+  };
 
   return (
     <div className="container flex flex-col mx-4 p-4">

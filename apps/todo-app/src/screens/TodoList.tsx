@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import TodoFilter from "../../../../shared/src/components/TodoFilter";
+import TodoFilter from "../../../../shared/ui/src/components/TodoFilter";
 import { useTodoList } from "../hooks/useTodoList";
-import ItemColumn from "../../../../shared/src/components/ItemColumn";
+import ItemColumn from "../../../../shared/ui/src/components/ItemColumn";
 
 export default function TodoList(): JSX.Element {
   const { columns, setSearchTerm } = useTodoList();
