@@ -1,5 +1,5 @@
-import TextareaWithValidation from "../../../../shared/ui/src/components/TextareaWithValidation";
-import useTodo from "../hooks/useTodo";
+import { TextareaWithValidation } from "@shared/ui";
+import { useTodo } from "../hooks/useTodo";
 
 const TodoCreate = (): JSX.Element => {
   const {

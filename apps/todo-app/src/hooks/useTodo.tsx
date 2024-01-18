@@ -7,7 +7,7 @@ type TodoEditParams = {
   todo_id: string;
 };
 
-const useTodo = () => {
+export const useTodo = () => {
   const { todo_id } = useParams<TodoEditParams>();
   const navigate = useNavigate();
 
@@ -178,5 +178,3 @@ const useTodo = () => {
     handleDeleteTodo,
   };
 };
-
-export default useTodo;
