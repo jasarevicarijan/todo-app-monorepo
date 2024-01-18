@@ -1,4 +1,4 @@
-import { ITodo } from "../../../todo/src/types/todo";
+import { ITodo } from "@shared/todo";
 import TodoItem from "./TodoItem";
 import { Link } from "react-router-dom";
 

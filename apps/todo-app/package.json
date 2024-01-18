@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@shared/todo": "workspace:^",
     "@types/react-router-dom": "^5.3.3",
     "dayjs": "^1.11.10",
     "debounce": "^2.0.0",

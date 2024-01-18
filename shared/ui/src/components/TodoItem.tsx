@@ -1,6 +1,6 @@
 import { useMemo } from "react";
-import { ITodo } from "../../../todo/src/types/todo";
-import { TodoStatus } from "../../../todo/src/enums/status";
+import { ITodo } from "@shared/todo";
+import { TodoStatus } from "@shared/todo";
 
 type TTodoItemProps = {
   todo: ITodo;

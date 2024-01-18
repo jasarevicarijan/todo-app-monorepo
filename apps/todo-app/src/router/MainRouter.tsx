@@ -1,6 +1,4 @@
-import { TodoList } from "@shared/todo";
-import { TodoCreate } from "@shared/todo";
-import { TodoEdit } from "@shared/todo";
+import { TodoList, TodoCreate, TodoEdit } from "@shared/todo";
 import {
   BrowserRouter as Router,
   Route,

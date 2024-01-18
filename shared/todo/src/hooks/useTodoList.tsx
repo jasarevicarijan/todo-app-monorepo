@@ -15,7 +15,7 @@ const debounce = (func: (...args: any[]) => void, delay: number) => {
   };
 };
 
-export const useTodoList = () => {
+const useTodoList = () => {
   const [todos, setTodos] = useState<ITodo[]>([]);
   const [filteredTodos, setFilteredTodos] = useState<ITodo[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -56,3 +56,5 @@ export const useTodoList = () => {
     columns: groupTodosByStatus,
   };
 };
+
+export default useTodoList;

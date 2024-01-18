@@ -4,6 +4,7 @@
     "version": "1",
     "main": "./src",
     "dependencies": {
+        "@shared/ui ": "workspace:^",
         "react": "^18.2.0",
         "react-router-dom": "^6.21.2"
     },
