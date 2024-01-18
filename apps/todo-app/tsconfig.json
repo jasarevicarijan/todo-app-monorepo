@@ -1,5 +1,5 @@
 {
-  "include": ["src", "src/types", "src/enums"],
+  "include": ["src"],
   "extends": "../../tsconfig.json",
   "references": [{ "path": "./tsconfig.node.json" }]
 }

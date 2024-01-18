@@ -1,7 +1,7 @@
 import { TextareaWithValidation } from "@shared/ui";
 import { useTodo } from "../hooks/useTodo";
 
-const TodoCreate = (): JSX.Element => {
+const TodoCreate = () => {
   const {
     editableDescription,
     isDescriptionValid,

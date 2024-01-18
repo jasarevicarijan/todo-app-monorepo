@@ -1,6 +1,6 @@
-import TodoList from "../screens/TodoList";
-import TodoCreate from "../screens/TodoCreate";
-import TodoEdit from "../screens/TodoEdit";
+import { TodoList } from "@shared/todo";
+import { TodoCreate } from "@shared/todo";
+import { TodoEdit } from "@shared/todo";
 import {
   BrowserRouter as Router,
   Route,

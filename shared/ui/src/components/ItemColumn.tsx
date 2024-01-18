@@ -1,4 +1,4 @@
-import { ITodo } from "../../../../apps/todo-app/src/types/todo";
+import { ITodo } from "../../../todo/src/types/todo";
 import TodoItem from "./TodoItem";
 import { Link } from "react-router-dom";
 

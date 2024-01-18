@@ -1,5 +1,5 @@
 import React from "react";
-import { useTodoList } from "../../../../apps/todo-app/src/hooks/useTodoList";
+import { useTodoList } from "../../../todo/src/hooks/useTodoList";
 
 type TTodoFilterProps = {
   onSearchTermChange: (value: string) => void;

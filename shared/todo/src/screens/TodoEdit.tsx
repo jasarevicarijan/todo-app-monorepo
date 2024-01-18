@@ -3,7 +3,7 @@ import { TextareaWithValidation } from "@shared/ui";
 import { TodoStatus } from "../enums/status";
 import { useTodo } from "../hooks/useTodo";
 
-export default function TodoEdit(): JSX.Element {
+const TodoEdit = () => {
   const {
     todo,
     editableDescription,
@@ -107,4 +107,6 @@ export default function TodoEdit(): JSX.Element {
       )}
     </div>
   );
-}
+};
+
+export default TodoEdit;

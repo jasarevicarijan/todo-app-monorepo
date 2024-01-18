@@ -3,7 +3,7 @@ import { TodoFilter } from "@shared/ui";
 import { ItemColumn } from "@shared/ui";
 import { useTodoList } from "../hooks/useTodoList";
 
-export default function TodoList(): JSX.Element {
+const TodoList = () => {
   const { columns, setSearchTerm } = useTodoList();
 
   return (
@@ -26,4 +26,6 @@ export default function TodoList(): JSX.Element {
       </div>
     </div>
   );
-}
+};
+
+export default TodoList;
