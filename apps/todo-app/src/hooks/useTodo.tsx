@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { ITodo } from "../types/todo";
-import { TTodoStatus, TodoStatus } from "../enums/status";
+import { ITodo } from "../../../../shared/utils/src/types/todo";
+import { TTodoStatus, TodoStatus } from "../../../../shared/utils/src/enums/status";
 
 type TodoEditParams = {
   todo_id: string;

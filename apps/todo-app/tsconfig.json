@@ -1,5 +1,5 @@
 {
-  "include": ["src"],
+  "include": ["src", "../../shared/utils/src/types", "../../shared/utils/src/enums"],
   "extends": "../../tsconfig.json",
   "references": [{ "path": "./tsconfig.node.json" }]
 }
