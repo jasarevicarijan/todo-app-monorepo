@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from "react";
-import { ITodo } from "../../../../shared/utils/src/types/todo";
-import { TTodoStatus } from "../../../../shared/utils/src/enums/status";
+import { ITodo } from "../types/todo";
+import { TTodoStatus } from "../enums/status";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const debounce = (func: (...args: any[]) => void, delay: number) => {

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import TextareaWithValidation from "../../../../shared/ui/src/components/TextareaWithValidation";
 import useTodo from "../hooks/useTodo";
-import { TodoStatus } from "../../../../shared/utils/src/enums/status";
+import { TodoStatus } from "../enums/status";
 
 export default function TodoEdit(): JSX.Element {
   const {
