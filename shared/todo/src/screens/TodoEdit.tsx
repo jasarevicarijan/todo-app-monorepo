@@ -47,6 +47,32 @@ const TodoEdit = () => {
     }
   };
 
+  const ActionButtons = () => (
+    <div>
+      <button
+        onClick={handleCancel}
+        type="button"
+        className="bg-gray-100 mr-2 px-4 py-2 rounded-md transition duration-300 hover:bg-gray-200 hover:shadow-md inline-block"
+      >
+        Cancel
+      </button>
+      <button
+        type="submit"
+        disabled={!isDescriptionValid}
+        className={`bg-blue-500 text-white px-4 py-2 rounded-md transition duration-300 ease-in-out hover:bg-blue-600 hover:shadow-md mr-2 inline-block ${!isDescriptionValid && "opacity-50 cursor-not-allowed"}`}
+      >
+        Save Todo
+      </button>
+      {renderStatusButtons()}
+      <button
+        onClick={handleDeleteTodo}
+        className="bg-red-500 text-white px-4 py-2 rounded-md transition duration-300 ease-in-out hover:bg-red-600 hover:shadow-md inline-block"
+      >
+        Delete Todo
+      </button>
+    </div>
+  );
+
   return (
     <div className="container flex flex-col mx-4 p-4">
       <div className="flex justify-between items-center">
@@ -66,33 +92,7 @@ const TodoEdit = () => {
               maxCharacters={255}
             />
             <div className="flex justify-between">
-              <div>
-                <button
-                  onClick={handleCancel}
-                  type="button"
-                  className="bg-gray-100 mr-2 px-4 py-2 rounded-md transition duration-300 hover:bg-gray-200 hover:shadow-md inline-block"
-                >
-                  Cancel
-                </button>
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  disabled={!isDescriptionValid}
-                  className={`bg-blue-500 text-white px-4 py-2 rounded-md transition duration-300 ease-in-out hover:bg-blue-600 hover:shadow-md mr-2 inline-block ${
-                    !isDescriptionValid && "opacity-50 cursor-not-allowed"
-                  }`}
-                >
-                  Save Todo
-                </button>
-                {renderStatusButtons()}
-                <button
-                  onClick={handleDeleteTodo}
-                  className="bg-red-500 text-white px-4 py-2 rounded-md transition duration-300 ease-in-out hover:bg-red-600 hover:shadow-md inline-block"
-                >
-                  Delete Todo
-                </button>
-              </div>
+              <ActionButtons />
             </div>
           </form>
         </div>
