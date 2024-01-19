@@ -1,13 +1,13 @@
 {
-    "name": "@shared/todo",
-    "private": true,
-    "version": "1",
-    "main": "./src",
-    "dependencies": {
-        "@shared/ui": "workspace:^",
-        "react": "^18.2.0"
-    },
-    "devDependencies": {
-        "@types/react": "^18.2.48"
-    }
+  "name": "@shared/todo",
+  "private": true,
+  "version": "1",
+  "main": "./src",
+  "dependencies": {
+    "@shared/ui": "workspace:^",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.48"
+  }
 }

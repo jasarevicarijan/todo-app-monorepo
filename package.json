@@ -11,10 +11,14 @@
   ],
   "scripts": {
     "todo-app": "yarn workspace @apps/todo-app dev",
-    "todo-app:build": "yarn workspace @apps/todo-app build"
+    "todo-app:build": "yarn workspace @apps/todo-app build",
+    "format": "npx prettier --write ."
   },
   "packageManager": "yarn@4.0.2",
   "dependencies": {
     "eslint": "^8.56.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.4"
   }
 }

@@ -45,7 +45,7 @@ const TodoItem = ({ todo }: TTodoItemProps) => {
       <div className="flex justify-between">
         <p className="text-sm mt-2">{`Status: ${todo.status}`}</p>
         <p className="text-sm mt-2">{`Created at: ${formatDate(
-          todo.created_at
+          todo.created_at,
         )}`}</p>
       </div>
     </div>

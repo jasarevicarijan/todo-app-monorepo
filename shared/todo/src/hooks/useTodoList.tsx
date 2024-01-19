@@ -27,7 +27,7 @@ const useTodoList = () => {
 
   useEffect(() => {
     const storedTodos = JSON.parse(
-      localStorage.getItem("todos") || "[]"
+      localStorage.getItem("todos") || "[]",
     ) as ITodo[];
     setTodos(storedTodos);
   }, []);

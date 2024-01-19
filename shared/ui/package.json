@@ -1,12 +1,12 @@
 {
-    "name": "@shared/ui",
-    "private": true,
-    "version": "1",
-    "main": "./src",
-    "dependencies": {
-        "react": "^18.2.0"
-    },
-    "devDependencies": {
-        "@types/react": "^18.2.48"
-    }
+  "name": "@shared/ui",
+  "private": true,
+  "version": "1",
+  "main": "./src",
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.48"
+  }
 }

@@ -1,4 +1,4 @@
 {
   "include": ["src", "src/screens", "src/types", "src/enums", "src/hooks"],
-  "extends": "../../tsconfig.json"
+  "extends": "../../tsconfig.json",
 }

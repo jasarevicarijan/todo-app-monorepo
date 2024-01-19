@@ -8,7 +8,6 @@ type TTodoFilterProps = {
 const TodoFilter = ({ onSearchTermChange }: TTodoFilterProps) => {
   const { searchTerm, setSearchTerm } = useTodoList();
 
-
   const handleSearchTermChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
     onSearchTermChange(e.target.value);

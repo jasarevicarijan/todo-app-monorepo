@@ -20,10 +20,10 @@ export const useTodo = () => {
     if (todo_id) {
       // Editing an existing todo
       const existingTodos: ITodo[] = JSON.parse(
-        localStorage.getItem("todos") || "[]"
+        localStorage.getItem("todos") || "[]",
       );
       const selectedTodo = existingTodos.find(
-        (t) => t.id.toString() === todo_id
+        (t) => t.id.toString() === todo_id,
       );
 
       if (!selectedTodo) {
@@ -40,7 +40,7 @@ export const useTodo = () => {
   }, [todo_id]);
 
   const handleEditableDescriptionChange = (
-    event: React.ChangeEvent<HTMLTextAreaElement>
+    event: React.ChangeEvent<HTMLTextAreaElement>,
   ) => {
     setEditableDescription(event.target.value);
     setIsDescriptionValid(true);
@@ -48,7 +48,7 @@ export const useTodo = () => {
 
   const handleDescriptionBlur = () => {
     setIsDescriptionValid(
-      editableDescription.length >= 10 && editableDescription.length <= 255
+      editableDescription.length >= 10 && editableDescription.length <= 255,
     );
   };
 
@@ -58,11 +58,11 @@ export const useTodo = () => {
     }
 
     const existingTodos: ITodo[] = JSON.parse(
-      localStorage.getItem("todos") || "[]"
+      localStorage.getItem("todos") || "[]",
     );
 
     const isInProgress = existingTodos.some(
-      (t) => t.status === TodoStatus.InProgress && t.id !== todo.id
+      (t) => t.status === TodoStatus.InProgress && t.id !== todo.id,
     );
 
     if (isInProgress && newStatus === TodoStatus.InProgress) {
@@ -71,7 +71,7 @@ export const useTodo = () => {
     }
 
     const updatedTodos = existingTodos.map((t) =>
-      t.id === todo.id ? { ...t, status: newStatus } : t
+      t.id === todo.id ? { ...t, status: newStatus } : t,
     );
 
     localStorage.setItem("todos", JSON.stringify(updatedTodos));
@@ -97,7 +97,7 @@ export const useTodo = () => {
     }
 
     const existingTodos: ITodo[] = JSON.parse(
-      localStorage.getItem("todos") || "[]"
+      localStorage.getItem("todos") || "[]",
     );
 
     if (isCreating) {
@@ -118,7 +118,7 @@ export const useTodo = () => {
         return;
       }
       const updatedTodos = existingTodos.map((t) =>
-        t.id === todo.id ? { ...t, description: editableDescription } : t
+        t.id === todo.id ? { ...t, description: editableDescription } : t,
       );
 
       localStorage.setItem("todos", JSON.stringify(updatedTodos));
@@ -148,7 +148,7 @@ export const useTodo = () => {
     }
 
     const confirmDelete = window.confirm(
-      "Are you sure you want to delete this todo?"
+      "Are you sure you want to delete this todo?",
     );
 
     if (!confirmDelete) {
@@ -156,7 +156,7 @@ export const useTodo = () => {
     }
 
     const existingTodos: ITodo[] = JSON.parse(
-      localStorage.getItem("todos") || "[]"
+      localStorage.getItem("todos") || "[]",
     );
 
     const updatedTodos = existingTodos.filter((t) => t.id !== todo.id);
