@@ -3,6 +3,6 @@ import TodoEdit from "./screens/TodoEdit";
 import TodoList from "./screens/TodoList";
 import useTodoList from "./hooks/useTodoList";
 import { TodoStatus } from "./enums/status";
-import { ITodo } from "./types/todo";
+import type { ITodo } from "./types/todo";
 
 export { TodoCreate, TodoEdit, TodoList, useTodoList, ITodo, TodoStatus };

@@ -4,13 +4,10 @@
     "version": "1",
     "main": "./src",
     "dependencies": {
-        "@shared/ui ": "workspace:^",
-        "react": "^18.2.0",
-        "react-router-dom": "^6.21.2"
+        "@shared/ui": "workspace:^",
+        "react": "^18.2.0"
     },
     "devDependencies": {
-        "@types/react": "^18.2.48",
-        "@types/react-dom": "^18.2.18",
-        "@types/react-router-dom": "^5.3.3"
+        "@types/react": "^18.2.48"
     }
 }
