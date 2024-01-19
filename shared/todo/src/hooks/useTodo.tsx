@@ -4,6 +4,8 @@ import { ITodo } from "../types/todo";
 import { TTodoStatus, TodoStatus } from "../enums/status";
 import storage from "@shared/storage";
 
+const TODO_STORAGE_KEY = "todos";
+
 type TodoEditParams = {
   todo_id: string;
 };
@@ -16,8 +18,6 @@ export const useTodo = () => {
   const [editableDescription, setEditableDescription] = useState<string>("");
   const [isDescriptionValid, setIsDescriptionValid] = useState<boolean>(true);
   const [isCreating, setIsCreating] = useState<boolean>(false);
-
-  const TODO_STORAGE_KEY = "todos";
 
   useEffect(() => {
     if (todo_id) {

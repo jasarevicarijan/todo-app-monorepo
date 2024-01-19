@@ -3,6 +3,8 @@ import { ITodo } from "../types/todo";
 import { TTodoStatus } from "../enums/status";
 import storage from "@shared/storage";
 
+const TODO_STORAGE_KEY = "todos";
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const debounce = (func: (...args: any[]) => void, delay: number) => {
   let timeoutId: ReturnType<typeof setTimeout>;
@@ -20,8 +22,6 @@ const useTodoList = () => {
   const [todos, setTodos] = useState<ITodo[]>([]);
   const [filteredTodos, setFilteredTodos] = useState<ITodo[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
-
-  const TODO_STORAGE_KEY = "todos";
 
   const search = debounce((term: string) => {
     const filtered = todos.filter((todo) => todo.description.includes(term));
