@@ -12,7 +12,9 @@
   "scripts": {
     "todo-app": "yarn workspace @apps/todo-app dev",
     "todo-app:build": "yarn workspace @apps/todo-app build",
-    "check": "eslint . && prettier --check . && tsc --noEmit"
+    "check": "eslint . && prettier --check . && tsc --noEmit",
+    "write": "prettier --write .",
+    "check-and-write": "npm run check && npm run write || true"
   },
   "packageManager": "yarn@4.0.2",
   "dependencies": {

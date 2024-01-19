@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ITodo } from "../types/todo";
 import { TTodoStatus, TodoStatus } from "../enums/status";
+import storage from "@shared/storage";
 
 type TodoEditParams = {
   todo_id: string;
@@ -19,9 +20,7 @@ export const useTodo = () => {
   useEffect(() => {
     if (todo_id) {
       // Editing an existing todo
-      const existingTodos: ITodo[] = JSON.parse(
-        localStorage.getItem("todos") || "[]",
-      );
+      const existingTodos: ITodo[] = storage.get<ITodo[]>("todos") || [];
       const selectedTodo = existingTodos.find(
         (t) => t.id.toString() === todo_id,
       );
@@ -57,9 +56,7 @@ export const useTodo = () => {
       return;
     }
 
-    const existingTodos: ITodo[] = JSON.parse(
-      localStorage.getItem("todos") || "[]",
-    );
+    const existingTodos: ITodo[] = storage.get<ITodo[]>("todos") || [];
 
     const isInProgress = existingTodos.some(
       (t) => t.status === TodoStatus.InProgress && t.id !== todo.id,
@@ -74,7 +71,7 @@ export const useTodo = () => {
       t.id === todo.id ? { ...t, status: newStatus } : t,
     );
 
-    localStorage.setItem("todos", JSON.stringify(updatedTodos));
+    storage.set("todos", updatedTodos);
     setTodo((prevTodo: ITodo | null) => {
       if (prevTodo) {
         return {
@@ -96,9 +93,7 @@ export const useTodo = () => {
       return;
     }
 
-    const existingTodos: ITodo[] = JSON.parse(
-      localStorage.getItem("todos") || "[]",
-    );
+    const existingTodos: ITodo[] = storage.get<ITodo[]>("todos") || [];
 
     if (isCreating) {
       // Creating a new todo
@@ -110,7 +105,7 @@ export const useTodo = () => {
       };
 
       const updatedTodos = [...existingTodos, newTodo];
-      localStorage.setItem("todos", JSON.stringify(updatedTodos));
+      storage.set("todos", updatedTodos);
       navigate("/todo/list");
     } else {
       // Editing an existing todo
@@ -121,7 +116,7 @@ export const useTodo = () => {
         t.id === todo.id ? { ...t, description: editableDescription } : t,
       );
 
-      localStorage.setItem("todos", JSON.stringify(updatedTodos));
+      storage.set("todos", updatedTodos);
       setTodo((prevTodo: ITodo | null) => {
         if (prevTodo) {
           return {
@@ -155,12 +150,10 @@ export const useTodo = () => {
       return;
     }
 
-    const existingTodos: ITodo[] = JSON.parse(
-      localStorage.getItem("todos") || "[]",
-    );
+    const existingTodos: ITodo[] = storage.get<ITodo[]>("todos") || [];
 
     const updatedTodos = existingTodos.filter((t) => t.id !== todo.id);
-    localStorage.setItem("todos", JSON.stringify(updatedTodos));
+    storage.set("todos", updatedTodos);
 
     navigate("/todo/list");
   };

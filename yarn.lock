@@ -743,10 +743,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@shared/storage@workspace:^, @shared/storage@workspace:shared/storage":
+  version: 0.0.0-use.local
+  resolution: "@shared/storage@workspace:shared/storage"
+  dependencies:
+    "@shared/ui": "workspace:^"
+    "@types/react": "npm:^18.2.48"
+    react: "npm:^18.2.0"
+  languageName: unknown
+  linkType: soft
+
 "@shared/todo@workspace:^, @shared/todo@workspace:shared/todo":
   version: 0.0.0-use.local
   resolution: "@shared/todo@workspace:shared/todo"
   dependencies:
+    "@shared/storage": "workspace:^"
     "@shared/ui": "workspace:^"
     "@types/react": "npm:^18.2.48"
     react: "npm:^18.2.0"

@@ -1,10 +1,9 @@
 {
-  "name": "@shared/todo",
+  "name": "@shared/storage",
   "private": true,
   "version": "1",
   "main": "./src",
   "dependencies": {
-    "@shared/storage": "workspace:^",
     "@shared/ui": "workspace:^",
     "react": "^18.2.0"
   },

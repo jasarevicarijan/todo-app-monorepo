@@ -1,6 +1,7 @@
 import { useEffect, useState, useMemo } from "react";
 import { ITodo } from "../types/todo";
 import { TTodoStatus } from "../enums/status";
+import storage from "@shared/storage";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const debounce = (func: (...args: any[]) => void, delay: number) => {
@@ -26,9 +27,7 @@ const useTodoList = () => {
   }, 250);
 
   useEffect(() => {
-    const storedTodos = JSON.parse(
-      localStorage.getItem("todos") || "[]",
-    ) as ITodo[];
+    const storedTodos = storage.get<ITodo[]>("todos") || [];
     setTodos(storedTodos);
   }, []);
 
