@@ -12,8 +12,11 @@ const TodoCreate = () => {
   } = useTodo();
 
   const handleCancel = () => {
-    window.history.back();
-  };
+    const confirmCancel = window.confirm("Are you sure you want to cancel?");
+    if (confirmCancel) {
+      window.history.back();
+    }
+  };  
 
   return (
     <div className="container flex flex-col mx-4 p-4">

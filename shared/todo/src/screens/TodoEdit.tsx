@@ -41,7 +41,10 @@ const TodoEdit = () => {
   };
 
   const handleCancel = () => {
-    window.history.back();
+    const confirmCancel = window.confirm("Are you sure you want to cancel?");
+    if (confirmCancel) {
+      window.history.back();
+    }
   };
 
   return (
