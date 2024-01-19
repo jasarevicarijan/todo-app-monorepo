@@ -17,10 +17,12 @@ export const useTodo = () => {
   const [isDescriptionValid, setIsDescriptionValid] = useState<boolean>(true);
   const [isCreating, setIsCreating] = useState<boolean>(false);
 
+  const TODO_STORAGE_KEY = "todos";
+
   useEffect(() => {
     if (todo_id) {
       // Editing an existing todo
-      const existingTodos: ITodo[] = storage.get<ITodo[]>("todos") || [];
+      const existingTodos: ITodo[] = storage.get<ITodo[]>(TODO_STORAGE_KEY) || [];
       const selectedTodo = existingTodos.find(
         (t) => t.id.toString() === todo_id,
       );
@@ -56,7 +58,7 @@ export const useTodo = () => {
       return;
     }
 
-    const existingTodos: ITodo[] = storage.get<ITodo[]>("todos") || [];
+    const existingTodos: ITodo[] = storage.get<ITodo[]>(TODO_STORAGE_KEY) || [];
 
     const isInProgress = existingTodos.some(
       (t) => t.status === TodoStatus.InProgress && t.id !== todo.id,
@@ -71,7 +73,7 @@ export const useTodo = () => {
       t.id === todo.id ? { ...t, status: newStatus } : t,
     );
 
-    storage.set("todos", updatedTodos);
+    storage.set(TODO_STORAGE_KEY, updatedTodos);
     setTodo((prevTodo: ITodo | null) => {
       if (prevTodo) {
         return {
@@ -93,7 +95,7 @@ export const useTodo = () => {
       return;
     }
 
-    const existingTodos: ITodo[] = storage.get<ITodo[]>("todos") || [];
+    const existingTodos: ITodo[] = storage.get<ITodo[]>(TODO_STORAGE_KEY) || [];
 
     if (isCreating) {
       // Creating a new todo
@@ -105,7 +107,7 @@ export const useTodo = () => {
       };
 
       const updatedTodos = [...existingTodos, newTodo];
-      storage.set("todos", updatedTodos);
+      storage.set(TODO_STORAGE_KEY, updatedTodos);
       navigate("/todo/list");
     } else {
       // Editing an existing todo
@@ -116,7 +118,7 @@ export const useTodo = () => {
         t.id === todo.id ? { ...t, description: editableDescription } : t,
       );
 
-      storage.set("todos", updatedTodos);
+      storage.set(TODO_STORAGE_KEY, updatedTodos);
       setTodo((prevTodo: ITodo | null) => {
         if (prevTodo) {
           return {
@@ -150,10 +152,10 @@ export const useTodo = () => {
       return;
     }
 
-    const existingTodos: ITodo[] = storage.get<ITodo[]>("todos") || [];
+    const existingTodos: ITodo[] = storage.get<ITodo[]>(TODO_STORAGE_KEY) || [];
 
     const updatedTodos = existingTodos.filter((t) => t.id !== todo.id);
-    storage.set("todos", updatedTodos);
+    storage.set(TODO_STORAGE_KEY, updatedTodos);
 
     navigate("/todo/list");
   };

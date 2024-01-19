@@ -21,13 +21,15 @@ const useTodoList = () => {
   const [filteredTodos, setFilteredTodos] = useState<ITodo[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
 
+  const TODO_STORAGE_KEY = "todos";
+
   const search = debounce((term: string) => {
     const filtered = todos.filter((todo) => todo.description.includes(term));
     setFilteredTodos(filtered);
   }, 250);
 
   useEffect(() => {
-    const storedTodos = storage.get<ITodo[]>("todos") || [];
+    const storedTodos = storage.get<ITodo[]>(TODO_STORAGE_KEY) || [];
     setTodos(storedTodos);
   }, []);
 
