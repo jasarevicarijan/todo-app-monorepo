@@ -6,8 +6,13 @@ type Storage = {
 
 const storage: Storage = {
   get<T>(key: string): T | null {
-    const storedData = localStorage.getItem(key);
-    return storedData ? JSON.parse(storedData) : null;
+    try {
+      const storedData = localStorage.getItem(key);
+      return storedData ? JSON.parse(storedData) : null;
+    } catch (error) {
+      console.error(`Error parsing data for key ${key}`, error);
+      return null;
+    }
   },
 
   set(key: string, data: unknown): void {
