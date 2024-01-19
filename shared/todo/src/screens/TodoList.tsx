@@ -5,15 +5,19 @@ import { useTodoList } from "@shared/todo";
 const TodoList = () => {
   const { columns, setSearchTerm } = useTodoList();
 
+  const AddTodoButton = () => (
+    <Link to="/todo/create" className="text-blue-500">
+      <button className="bg-blue-500 text-white px-4 py-2 mb-2 rounded-md transition duration-300 ease-in-out hover:bg-blue-600 hover:shadow-md">
+        Add new Todo
+      </button>
+    </Link>
+  );
+
   return (
     <div className="container mx-auto p-4">
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold mb-4">Todo Planner</h1>
-        <Link to="/todo/create" className="text-blue-500">
-          <button className="bg-blue-500 text-white px-4 py-2 mb-2 rounded-md transition duration-300 ease-in-out hover:bg-blue-600 hover:shadow-md">
-            Add new Todo
-          </button>
-        </Link>
+        <AddTodoButton />
       </div>
 
       <TodoFilter onSearchTermChange={setSearchTerm} />
